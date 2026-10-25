@@ -1,0 +1,2 @@
+cd /data/user3/voice_guard
+source env/bin/activate
