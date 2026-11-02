@@ -32,7 +32,7 @@ def run_zeroday_benchmark():
 
     # 1. Load Model
     model = DualStreamDetector(dsp_dim=45).to(device)
-    checkpoint = torch.load(checkpoint_path, map_location=device)
+    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
     print(f"Loaded checkpoint from Epoch {checkpoint.get('epoch', 'N/A')} (Dev EER was {checkpoint.get('dev_eer', 0.0):.2f}%)")
